@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ray Liang | Firmware Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', 'Calibri', sans-serif;
+            background-color: #f8f9fa; /* 淺灰色背景 */
+            color: #212529; /* 深色文字 */
+        }
+        h1, h2, h3 {
+            font-weight: 700;
+        }
+        .project-card {
+            border-bottom: 1px solid #e9ecef; /* 分隔線 */
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+        }
+        .project-card:last-child {
+            border-bottom: none;
+        }
+        .tag {
+            display: inline-block;
+            background-color: #e9ecef;
+            color: #495057;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        a:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <main class="container mx-auto max-w-4xl px-6 py-12 md:py-20">
+
+        <!-- Header Section -->
+        <header class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl mb-2">梁睿軒 (Ray Liang)</h1>
+            <p class="text-xl text-gray-600 mb-4">嵌入式軟韌體工程師 / Embedded Software/Firmware Engineer</p>
+            <div class="flex justify-center items-center space-x-4">
+                <p class="text-gray-600">ray131326@gmail.com</p>
+            </div>
+        </header>
+
+        <!-- About Section -->
+        <section id="about" class="mb-16">
+            <h2 class="text-3xl mb-6 border-b pb-2">關於我 (About Me)</h2>
+            <div class="text-gray-700 space-y-4 text-base md:text-lg">
+                <p>
+                    我的嵌入式之旅，始於大一的機器人實作課程。在那之後便對嵌入式十分著迷與投入，並學生時期有著眾多的實作經歷。而在畢業後也繼續地在嵌入式繼續深入。在建興儲存科技(SSSTC)的兩年半中，我深入企業級SSD的核心，負責架構與優化關鍵的FTL演算法，如垃圾回收(GC)與Trim。我熱衷於解決複雜的效能瓶頸，並享受為提升系統效能與可靠性，打造簡潔高效解決方案的整個過程。
+                </p>
+            </div>
+        </section>
+
+
+        <!-- Work Section -->
+        <section id="work">
+            <h2 class="text-3xl mb-8 border-b pb-2">精選作品 (Featured Work)</h2>
+
+            <div class="space-y-12">
+                <!-- Project 1: GC -->
+                <div class="project-card">
+                    <h3 class="text-2xl mb-2">GC Performance 調控與優化</h3>
+                    <p class="text-gray-500 mb-4">時間：建興儲存科技任職期間</p>
+                    <img src="GC.jpg" alt="GC Performance Optimization" class="w-full rounded-lg mb-4 shadow">
+                    <div class="mb-4">
+                        <h4 class="font-bold text-lg mb-2">描述</h4>
+                        <p class="text-gray-700">因為我們的產品是microsoft用於server的儲存裝置，對於寫入速度的差距(variation)要求比一般SSD產品還高，而當時我們的device遠遠無法達標。所以我結合學生時代的所學，導入自動控制的理論，透過數學的方法改善這個問題，成功解決variation的要求，更進而優化有效資料的分布，並提升穩態的寫入速度，所謂一石三鳥的解決方案。</p>
+                    </div>
+                     <div class="mb-4">
+                        <h4 class="font-bold text-lg mb-2">角色與成果</h4>
+                        <ul class="list-disc list-inside text-gray-700">
+                            <li><strong>角色：</strong>提出解決方案、主導</li>
+                            <li><strong>成果：</strong>寫入速度差距(variation)控制在5%以下、提升穩態寫入速度 20%。</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-2">使用工具</h4>
+                        <span class="tag">C</span><span class="tag">UR log</span><span class="tag">Python</span><span class="tag">Shell Script</span>
+                    </div>
+                </div>
+
+                <!-- Project 2: Trim -->
+                 <div class="project-card">
+                    <h3 class="text-2xl mb-2">Trim 功能全新架構設計</h3>
+                    <p class="text-gray-500 mb-4">時間：建興儲存科技任職期間</p>
+                    <img src="trim.jpg" alt="Trim Architecture Redesign" class="w-full rounded-lg mb-4 shadow">
+                     <div class="mb-4">
+                        <h4 class="font-bold text-lg mb-2">描述</h4>
+                        <p class="text-gray-700">我在職期間經歷兩代產品，因為前一帶產品的Trim功能不完善，有諸多限制。那時若要改善這個狀況必須架構大改，將會大大增加開發週期與難度。因此我當時提出一個基於原本架構的解決方案，透過改變定義以及結合journal的做法，成功解決這個複雜難題，並於新的產品實現該設計。</p>
+                    </div>
+                     <div class="mb-4">
+                        <h4 class="font-bold text-lg mb-2">角色與成果</h4>
+                        <ul class="list-disc list-inside text-gray-700">
+                             <li><strong>角色：</strong>提出解決方案、主導</li>
+                            <li><strong>成果：</strong>解決NUSE算不準的難題、結合DMAC硬體加速使效率提升50倍、確保SPOR保護。</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-2">使用工具</h4>
+                        <span class="tag">C</span><span class="tag">UR log</span><span class="tag">Python</span><span class="tag">Shell Script</span>
+                    </div>
+                </div>
+
+                <!-- Project 5: QCW (Moved up for relevance) -->
+                <div class="project-card">
+                    <h3 class="text-2xl mb-2">QCW雷射用於晶圓隱形切割之研究</h3>
+                    <p class="text-gray-500 mb-4">時間：研究所</p>
+                    <img src="QCW.jpg" alt="QCW Laser for Stealth Dicing" class="w-full rounded-lg mb-4 shadow">
+                    <div class="mb-4">
+                        <h4 class="font-bold text-lg mb-2">描述</h4>
+                        <p class="text-gray-700">這項研究為敝人的碩士論文，因為其隱形的特性，難以觀察其實驗過程，其實驗的成敗只有破片時才知道，是敝人做過最難的題目。需要先透過C++模擬晶片內部的熱傳導情況，找出適合的光路NA值，並透過Zemax光學模擬軟體進行光路設計，並透過實作驗證此一想法。</p>
+                    </div>
+                     <div class="mb-4">
+                        <h4 class="font-bold text-lg mb-2">角色與成果</h4>
+                        <ul class="list-disc list-inside text-gray-700">
+                            <li><strong>角色：</strong>計畫撰寫與規劃、程式模擬、實驗驗證</li>
+                            <li><strong>獎項：</strong>2022上銀機械碩士論文獎第一名、2021台灣精密工程學會精密工程論文獎第二名。</li>
+                        </ul>
+                    </div>
+                    <div class="mb-4">
+                        <h4 class="font-bold text-lg mb-2">使用工具</h4>
+                        <span class="tag">C++ (熱傳導模擬)</span><span class="tag">光路設計 (Zemax)</span><span class="tag">無塵室</span><span class="tag">雷射切割機</span>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-2">相關連結</h4>
+                        <a href="https://hdl.handle.net/11296/628c9j" target="_blank" rel="noopener noreferrer">https://hdl.handle.net/11296/628c9j</a>
+                    </div>
+                </div>
+
+                <!-- Project 3: Robot -->
+                 <div class="project-card">
+                    <h3 class="text-2xl mb-2">兩輪自動平衡踢足球機器人</h3>
+                    <p class="text-gray-500 mb-4">時間：研究所</p>
+                    <img src="robot.jpg" alt="Self-Balancing Soccer Robot" class="w-full rounded-lg mb-4 shadow">
+                    <div class="mb-4">
+                        <h4 class="font-bold text-lg mb-2">描述</h4>
+                        <p class="text-gray-700">這是課程的期末專題，先透過Matlab做控制系統模擬，並透過開發板與電路實作來實現對硬體的控制。其中透過特別設計的自己爬起來功能，獲得了競賽的好成績。</p>
+                    </div>
+                     <div class="mb-4">
+                        <h4 class="font-bold text-lg mb-2">角色與成果</h4>
+                        <ul class="list-disc list-inside text-gray-700">
+                            <li><strong>角色：</strong>組長、電路、韌體</li>
+                            <li><strong>成果：</strong>本機器人在班際足球競賽獲得第一名。</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-2">使用工具</h4>
+                        <span class="tag">Matlab</span><span class="tag">C</span><span class="tag">電路設計</span><span class="tag">藍芽</span><span class="tag">馬達驅動</span><span class="tag">3D列印</span>
+                    </div>
+                </div>
+
+                <!-- Project 4: SLA -->
+                 <div class="project-card">
+                    <h3 class="text-2xl mb-2">光碟機之重生－SLA光學3D列印機</h3>
+                     <p class="text-gray-500 mb-4">時間：大學</p>
+                    <video autoplay loop muted playsinline class="w-full rounded-lg mb-4 shadow">
+                       <source src="SLA.wmv" type="video/mp4">
+                       Your browser does not support the video tag.
+                    </video>
+                     <div class="mb-4">
+                        <h4 class="font-bold text-lg mb-2">描述</h4>
+                        <p class="text-gray-700">此一研究是透過光學讀寫頭之微米級光斑實現高精度光固化3D列印，計劃期間需要機構設計與實現，以及電路模擬與實作，並透過開發版之GPIO腳位控制馬達以及驅動雷射點亮電路。</p>
+                    </div>
+                     <div class="mb-4">
+                        <h4 class="font-bold text-lg mb-2">角色與成果</h4>
+                        <ul class="list-disc list-inside text-gray-700">
+                             <li><strong>角色：</strong>組長、機構、電路、韌體</li>
+                            <li><strong>獎項：</strong>2017旭泰科技論文獎第三名、2017全國大專院校產學創新實作競賽最佳創新獎。</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-2">使用工具</h4>
+                        <span class="tag">C</span><span class="tag">電路設計</span><span class="tag">雷射切割</span><span class="tag">馬達驅動</span>
+                    </div>
+                </div>
+                
+                <!-- Project 6: Hangboard -->
+                 <div class="project-card">
+                    <h3 class="text-2xl mb-2">攜帶式可調攀岩指力板</h3>
+                    <p class="text-gray-500 mb-4">時間：離職後</p>
+                    <img src="hangboard.jpg" alt="Adjustable Climbing Hangboard" class="w-full rounded-lg mb-4 shadow">
+                    <div class="mb-4">
+                        <h4 class="font-bold text-lg mb-2">描述</h4>
+                        <p class="text-gray-700">在上一份工作結束後有試著做了一小段的木工為創業，設計的這個指力板受到不錯的評價，並陸續有收到訂單。本來有計畫結合嵌入式的專業，提高它的附加價值。但因為職涯考量，這個專案暫時暫停了。</p>
+                    </div>
+                     <div class="mb-4">
+                        <h4 class="font-bold text-lg mb-2">角色與成果</h4>
+                        <ul class="list-disc list-inside text-gray-700">
+                            <li><strong>角色：</strong>設計者</li>
+                            <li><strong>成果：</strong>解決南部岩友指力訓練的問題，並陸續收到訂單。</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-2">使用工具</h4>
+                        <span class="tag">Fusion 360</span><span class="tag">CNC</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center py-8 mt-8 border-t">
+        <p class="text-gray-500 text-sm">
+            © 2025 Ray Liang
+        </p>
+    </footer>
+
+</body>
+</html>
