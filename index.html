@@ -63,7 +63,7 @@
             <h2 class="text-3xl mb-6 border-b pb-2">關於我 (About Me)</h2>
             <div class="text-gray-700 space-y-4 text-base md:text-lg">
                 <p>
-                    我的嵌入式之旅，始於大一的機器人實作課程。在那之後便對嵌入式十分著迷與投入，並學生時期有著眾多的實作經歷。而在畢業後也繼續地在嵌入式繼續深入。在建興儲存科技(SSSTC)的兩年半中，我深入企業級SSD的核心，負責架構與優化關鍵的FTL演算法，如垃圾回收(GC)與Trim。我熱衷於解決複雜的效能瓶頸，並享受為提升系統效能與可靠性，打造簡潔高效解決方案的整個過程。
+                    我的嵌入式之旅，始於大一的機器人實作課程。在那之後便對嵌入式系統十分著迷與投入，在學生時期有著眾多的實作經歷。並在畢業後繼續於嵌入式領域深入。在建興儲存科技(SSSTC)的兩年半中，我深入企業級SSD的核心，負責架構與優化關鍵的FTL演算法，如垃圾回收(GC)與Trim。我熱衷於解決複雜的效能瓶頸，並享受為提升系統效能與可靠性，打造簡潔高效解決方案的整個過程。
                 </p>
             </div>
         </section>
@@ -87,7 +87,7 @@
                         <h4 class="font-bold text-lg mb-2">角色與成果</h4>
                         <ul class="list-disc list-inside text-gray-700">
                             <li><strong>角色：</strong>提出解決方案、主導</li>
-                            <li><strong>成果：</strong>寫入速度差距(variation)控制在5%以下、提升穩態寫入速度 20%。</li>
+                            <li><strong>成果：</strong>寫入速度差距(variation)控制在5%以下、提升穩態寫入速度 20%。優話 Hot/Cold Data 分佈，提升穩態寫入速度 20%。</li>
                         </ul>
                     </div>
                     <div>
@@ -103,13 +103,13 @@
                     <img src="trim.jpg" alt="Trim Architecture Redesign" class="w-full rounded-lg mb-4 shadow">
                      <div class="mb-4">
                         <h4 class="font-bold text-lg mb-2">描述</h4>
-                        <p class="text-gray-700">我在職期間經歷兩代產品，因為前一帶產品的Trim功能不完善，有諸多限制。那時若要改善這個狀況必須架構大改，將會大大增加開發週期與難度。因此我當時提出一個基於原本架構的解決方案，透過改變定義以及結合journal的做法，成功解決這個複雜難題，並於新的產品實現該設計。</p>
+                        <p class="text-gray-700">我在職期間經歷兩代產品，因為前一代產品的Trim功能不完善，有諸多限制。那時若要改善這個狀況必須架構大改，將會大大增加開發週期與難度。因此我當時提出一個基於原本架構的解決方案，透過改變定義以及結合journal的做法，成功解決這個複雜難題，並於新的產品實現該設計。</p>
                     </div>
                      <div class="mb-4">
                         <h4 class="font-bold text-lg mb-2">角色與成果</h4>
                         <ul class="list-disc list-inside text-gray-700">
                              <li><strong>角色：</strong>提出解決方案、主導</li>
-                            <li><strong>成果：</strong>解決NUSE算不準的難題、結合DMAC硬體加速使效率提升50倍、確保SPOR保護。</li>
+                            <li><strong>成果：</strong>解決NUSE算不準的難題、結合DMAC硬體加速使效率提升50倍。確保非預期斷電 (SPOR) 的保護。有效降低因 Trim 引起的寫入放大。</li>
                         </ul>
                     </div>
                     <div>
@@ -125,7 +125,7 @@
                     <img src="QCW.jpg" alt="QCW Laser for Stealth Dicing" class="w-full rounded-lg mb-4 shadow">
                     <div class="mb-4">
                         <h4 class="font-bold text-lg mb-2">描述</h4>
-                        <p class="text-gray-700">這項研究為敝人的碩士論文，因為其隱形的特性，難以觀察其實驗過程，其實驗的成敗只有破片時才知道，是敝人做過最難的題目。需要先透過C++模擬晶片內部的熱傳導情況，找出適合的光路NA值，並透過Zemax光學模擬軟體進行光路設計，並透過實作驗證此一想法。</p>
+                        <p class="text-gray-700">這項研究為敝人的碩士論文，因為其隱形的特性，難以觀察其實驗過程，其實驗的成敗只有破片時才知道，是敝人做過最難的題目。需要先透過C++模擬晶片內部的熱傳導情況，找出適合的光路NA值，並透過Zemax光學模擬軟體進行光路設計，最後透過實作驗證此一想法。</p>
                     </div>
                      <div class="mb-4">
                         <h4 class="font-bold text-lg mb-2">角色與成果</h4>
@@ -170,10 +170,16 @@
                  <div class="project-card">
                     <h3 class="text-2xl mb-2">光碟機之重生－SLA光學3D列印機</h3>
                      <p class="text-gray-500 mb-4">時間：大學</p>
-                    <video autoplay loop muted playsinline class="w-full rounded-lg mb-4 shadow">
-                       <source src="SLA.wmv" type="video/mp4">
-                       Your browser does not support the video tag.
-                    </video>
+                    <div class="w-full rounded-lg mb-4 shadow overflow-hidden aspect-video">
+                        <!-- 2. 將您從 YouTube 複製的 iframe 貼在這裡 -->
+                        <iframe class="w-full h-full"
+                            src="https://youtu.be/O6ziKi3qQlE" 
+                            title="SLA光學3D列印機展示"
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
                      <div class="mb-4">
                         <h4 class="font-bold text-lg mb-2">描述</h4>
                         <p class="text-gray-700">此一研究是透過光學讀寫頭之微米級光斑實現高精度光固化3D列印，計劃期間需要機構設計與實現，以及電路模擬與實作，並透過開發版之GPIO腳位控制馬達以及驅動雷射點亮電路。</p>
@@ -198,7 +204,7 @@
                     <img src="hangboard.jpg" alt="Adjustable Climbing Hangboard" class="w-full rounded-lg mb-4 shadow">
                     <div class="mb-4">
                         <h4 class="font-bold text-lg mb-2">描述</h4>
-                        <p class="text-gray-700">在上一份工作結束後有試著做了一小段的木工為創業，設計的這個指力板受到不錯的評價，並陸續有收到訂單。本來有計畫結合嵌入式的專業，提高它的附加價值。但因為職涯考量，這個專案暫時暫停了。</p>
+                        <p class="text-gray-700">在上一份工作結束後有試著做了一小段的木工微創業，其中設計的這個指力板獲得不錯的評價，並陸續有收到訂單。本來有計畫結合嵌入式的專業，提高它的附加價值。但因為職涯考量，這個專案暫時暫停了。</p>
                     </div>
                      <div class="mb-4">
                         <h4 class="font-bold text-lg mb-2">角色與成果</h4>
